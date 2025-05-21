@@ -1,0 +1,4 @@
+gcloud run services add-iam-policy-binding mle-template-service \
+  --region=us-east4 \
+  --member="allUsers" \
+  --role="roles/run.invoker"

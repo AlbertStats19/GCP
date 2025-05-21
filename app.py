@@ -7,10 +7,14 @@ def main():
 
 @app.route("/train_pipeline")
 def train_pipeline():
-    from pipeline.train_pipeline import compile_pipeline, run_pipeline
-    compile_pipeline()
-    run_pipeline()
-    return 'Ejecución Correcta!'
+    try:
+        from pipeline.train_pipeline import compile_pipeline, run_pipeline
+        msg_compile = compile_pipeline()
+        msg_run     = run_pipeline()
+        return f"{msg_compile}\n{msg_run}"
+    except Exception as e:
+        import traceback
+        return f"❌ Error en el endpoint /train_pipeline:\n{str(e)}\n{traceback.format_exc()}", 500
 
 @app.route("/predict_pipeline")
 def predict_pipeline():
