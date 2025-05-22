@@ -5,18 +5,3 @@ Cloud Run Admin
 Storage Admin
 Artifact Registry Reader
 Vertex AI User
-
-# Habilitar permisos
-
-gcloud run services add-iam-policy-binding mle-template-service \
-  --region=us-east4 \
-  --member="allUsers" \
-  --role="roles/run.invoker"
-
-
-# Crear proyecto: mle-template-project
-
-gcloud artifacts repositories add-iam-policy-binding repo-mle-template \
-  --location=us-east4 \
-  --member="serviceAccount:service-$(gcloud projects describe $(gcloud config get-value project) --format='value(projectNumber)')@gcp-sa-aiplatform-cc.iam.gserviceaccount.com" \
-  --role="roles/artifactregistry.reader"
