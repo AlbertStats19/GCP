@@ -1,3 +1,13 @@
+# Crear cuenta de servicio svc-cloud-build@mle-template-project.iam.gserviceaccount.com:
+
+ROLES:
+Cloud Run Admin
+Storage Admin
+Artifact Registry Reader
+Vertex AI User
+
+# Habilitar permisos
+
 gcloud run services add-iam-policy-binding mle-template-service \
   --region=us-east4 \
   --member="allUsers" \
