@@ -8,7 +8,7 @@
     "PIPELINE_PATH_BUCKET"         : "mlops-test",
     "PIPELINE_MODEL_NAMES"         : "iris-model",
     "PIPELINE_MODEL_DESCRIPTION"   : "Modelo plantilla MLOps",
-    "PIPELINE_ALERT_MAILS"         : ["ia.albert.ml@gmail.com"],
+    "PIPELINE_ALERT_MAILS"         : ["ycaperam@unal.edu.co"],
     
     "OUTPUT_PROJECT_ID"            : "mle-template-project",
     "OUTPUT_DATASET_ID"            : "MlopsTemplate",
