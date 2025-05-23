@@ -47,6 +47,53 @@ BASE_IMAGE                = '{}-docker.pkg.dev/{}/{}/{}:'.format(REGION,
 ##############################################################################################
 #===================================== get_data COMPONENT ===================================#
 ##############################################################################################
+#@component(base_image = BASE_IMAGE)
+#def get_data(name_bucket : str,
+#             path_bucket : str,
+#             dataset         : OutputPath("Dataset")) -> NamedTuple("output", [("features", list),("target", str),("train_data_path",str)]):
+#    
+#    #==== Importing necessary libraries ====#
+#    import pandas as pd
+#    from sklearn.datasets import load_iris
+#    
+#    #==== Loading the Iris dataset ====#
+#    iris = load_iris()
+#    data = pd.DataFrame(data=iris['data'], columns=iris['feature_names'])
+#    data['target'] = iris['target']
+#    
+#    # Define a mapping dictionary for the columns
+#    column_mapping = {
+#        'sepal length (cm)': 'sepal_length_cm',
+#        'sepal width (cm)': 'sepal_width_cm',
+#        'petal length (cm)': 'petal_length_cm',
+#        'petal width (cm)': 'petal_width_cm',
+#    }
+#
+#    # Rename the columns using the mapping
+#    data.rename(columns=column_mapping, inplace=True)
+#    
+#    columns = list(data.columns)
+#    features = columns[:-1]
+#    target = columns[-1]
+#
+#    #==== Getting a random sample of 100 rows ====#
+#    # If the dataset contains fewer than 100 rows, this will return all rows in random order
+#    random_sample = data.sample(n=min(100, len(data)), random_state=42) # The random_state ensures reproducibility
+#    data = random_sample.drop(columns=['target'])
+#    
+#    #==== Get the training_dataset ====#
+#    from CustomLib.gcp import cloudstorage
+#    gcs_path = f"gs://{name_bucket}/{path_bucket}/last_training_path.txt"
+#    train_data_path = cloudstorage.read_txt_as_str(gcs_path=gcs_path)
+#    
+#    #==== Save the df in GCS ====#
+#    cloudstorage.write_csv(df       = data, 
+#                           gcs_path = dataset + '.csv')
+#    
+#    return features, target, train_data_path
+    
+
+
 @component(base_image = BASE_IMAGE)
 def get_data(name_bucket : str,
              path_bucket : str,
@@ -57,9 +104,7 @@ def get_data(name_bucket : str,
     from sklearn.datasets import load_iris
     
     #==== Loading the Iris dataset ====#
-    iris = load_iris()
-    data = pd.DataFrame(data=iris['data'], columns=iris['feature_names'])
-    data['target'] = iris['target']
+    data = pd.read_csv("gs://my-bucket-yacm/data.csv")
     
     # Define a mapping dictionary for the columns
     column_mapping = {
@@ -91,8 +136,8 @@ def get_data(name_bucket : str,
                            gcs_path = dataset + '.csv')
     
     return features, target, train_data_path
-    
-    
+
+
 ###################################################################################
 #============================ batch_predict COMPONENT ============================#
 ###################################################################################
