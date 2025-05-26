@@ -1,3 +1,7 @@
+#####################################################################
+#----------------------------- GMAIL -------------------------------#
+#####################################################################
+
 # Crear cuenta de servicio svc-cloud-build@mle-template-project.iam.gserviceaccount.com:
 
 ROLES:
@@ -16,8 +20,23 @@ gcloud services enable \
   run.googleapis.com \
   cloudbuild.googleapis.com
 
-# ROLES 
+#####################################################################
+#----------------------------- UNAL --------------------------------#
+#####################################################################
+
+# CLOUD SHELL
+step1: gcloud auth login
+step2: gcloud config set account ycaperam@unal.edu.co
+step3: gcloud config set project mle-template-project-460721
+step4: gcloud artifacts repositories add-iam-policy-binding repo-mle-template \
+  --location=us-east4 \
+  --member="serviceAccount:service-286058926532@gcp-sa-aiplatform-cc.iam.gserviceaccount.com" \
+  --role="roles/artifactregistry.reader" \
+  --project=mle-template-project-460721
+
+# ROLES IAM AND Administrador
 286058926532-compute@developer.gserviceaccount.com
 Editor
 Administrador de Cloud Run
 Usuario de cuenta de servicio (roles/iam.serviceAccountUser)
+
