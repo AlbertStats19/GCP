@@ -40,3 +40,8 @@ Editor
 Administrador de Cloud Run
 Usuario de cuenta de servicio (roles/iam.serviceAccountUser)
 
+# ROLES VERTEXAI
+service-286058926532@gcp-sa-aiplatform-cc.iam.gserviceaccount.com
+Administrador de Artifact Registry
+Agente de servicio del código personalizado de Vertex AI
+Lector de Artifact Registry
