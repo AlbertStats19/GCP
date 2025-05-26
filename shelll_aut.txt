@@ -45,3 +45,4 @@ service-286058926532@gcp-sa-aiplatform-cc.iam.gserviceaccount.com
 Administrador de Artifact Registry
 Agente de servicio del código personalizado de Vertex AI
 Lector de Artifact Registry
+Usuario de Vertex AI
