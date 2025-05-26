@@ -1,5 +1,5 @@
 {
-    "PIPELINE_PROJECT_ID"          : "mle-template-project",
+    "PIPELINE_PROJECT_ID"          : "mle-template-project-460721",
     "PIPELINE_REGION"              : "us-east4",
     "PIPELINE_METADATA"            : {"key":"mlops",
                                       "value":"mle-template"},
@@ -10,7 +10,7 @@
     "PIPELINE_MODEL_DESCRIPTION"   : "Modelo plantilla MLOps",
     "PIPELINE_ALERT_MAILS"         : ["ycaperam@unal.edu.co"],
     
-    "OUTPUT_PROJECT_ID"            : "mle-template-project",
+    "OUTPUT_PROJECT_ID"            : "mle-template-project-460721",
     "OUTPUT_DATASET_ID"            : "MlopsTemplate",
     "OUTPUT_TABLE_ID"              : "Predictions",
     
