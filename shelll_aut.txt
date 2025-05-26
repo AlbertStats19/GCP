@@ -15,3 +15,9 @@ gcloud services enable \
   artifactregistry.googleapis.com \
   run.googleapis.com \
   cloudbuild.googleapis.com
+
+# ROLES 
+286058926532-compute@developer.gserviceaccount.com
+Editor
+Administrador de Cloud Run
+Usuario de cuenta de servicio (roles/iam.serviceAccountUser)
