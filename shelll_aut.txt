@@ -36,9 +36,12 @@ step4: gcloud artifacts repositories add-iam-policy-binding repo-mle-template \
 
 # ROLES IAM AND Administrador
 286058926532-compute@developer.gserviceaccount.com
-Editor
+Administrador de Artifact Registry
 Administrador de Cloud Run
-Usuario de cuenta de servicio (roles/iam.serviceAccountUser)
+Editor
+Lector de Artifact Registry
+Usuario de cuenta de servicio
+
 
 # ROLES VERTEXAI
 service-286058926532@gcp-sa-aiplatform-cc.iam.gserviceaccount.com
@@ -46,10 +49,3 @@ Administrador de Artifact Registry
 Agente de servicio del código personalizado de Vertex AI
 Lector de Artifact Registry
 Usuario de Vertex AI
-
-
-# ROLES y MIEMBROS
-gcloud projects add-iam-policy-binding mle-template-project-460721 \
-  --member="serviceAccount:service-286058926532@gcp-sa-aiplatform-cc.iam.gserviceaccount.com" \
-  --role="roles/artifactregistry.reader" \
-  --condition=None
