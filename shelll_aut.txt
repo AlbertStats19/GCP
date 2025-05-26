@@ -47,5 +47,9 @@ Agente de servicio del código personalizado de Vertex AI
 Lector de Artifact Registry
 Usuario de Vertex AI
 
-# No more
-# No more
+
+# ROLES y MIEMBROS
+gcloud projects add-iam-policy-binding mle-template-project-460721 \
+  --member="serviceAccount:service-286058926532@gcp-sa-aiplatform-cc.iam.gserviceaccount.com" \
+  --role="roles/artifactregistry.reader" \
+  --condition=None
