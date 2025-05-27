@@ -49,3 +49,5 @@ Administrador de Artifact Registry
 Agente de servicio del código personalizado de Vertex AI
 Lector de Artifact Registry
 Usuario de Vertex AI
+
+# Validar Artifact y VertexAI (Habilitar)
