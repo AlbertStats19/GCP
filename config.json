@@ -1,6 +1,6 @@
 {
     "PIPELINE_PROJECT_ID"          : "mle-template-project-460721",
-    "PIPELINE_REGION"              : "us-east4",
+    "PIPELINE_REGION"              : "us-central1",
     "PIPELINE_METADATA"            : {"key":"mlops",
                                       "value":"mle-template"},
     "PIPELINE_CRON"                : "TZ=America/Lima 30 11 3 * *",
